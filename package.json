@@ -34,7 +34,7 @@
     "@radix-ui/react-slot": "1.0.2",
     "@radix-ui/react-tabs": "1.0.4",
     "@tanstack/match-sorter-utils": "8.11.7",
-    "@tanstack/react-query": "4.29.7",
+    "@tanstack/react-query": "5.31.0",
     "@tanstack/react-table": "8.10.3",
     "axios": "^1.6.2",
     "class-variance-authority": "0.7.0",
