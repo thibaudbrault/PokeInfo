@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "@playwright/test": "1.31.2",
-    "@tanstack/eslint-plugin-query": "4.29.4",
+    "@tanstack/eslint-plugin-query": "5.32.1",
     "@types/node": "20.3.1",
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
