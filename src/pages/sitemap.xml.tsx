@@ -5,6 +5,8 @@ import { BASE_URL, Limit, sanitizeForXML } from '@/utils';
 
 const URL = `https://pokeref.app`;
 
+export const runtime = `edge`;
+
 async function generateSiteMap() {
   const pokedexRes = await fetch(`${BASE_URL}/pokemon?limit=${Limit.POKEMON}`);
   const pokedex: IPokemon[] = await pokedexRes
