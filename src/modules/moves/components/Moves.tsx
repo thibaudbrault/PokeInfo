@@ -29,10 +29,7 @@ export function Moves() {
             <Link
               className="tLink"
               id={info.getValue<string>()}
-              href={{
-                pathname: `/move/[name]`,
-                query: { name: info.getValue<string>() },
-              }}
+              href={`/moves/${info.getValue()}`}
             >
               {removeDash(info.getValue<string>()).replaceAll(`--`, `-`)}
             </Link>
@@ -46,10 +43,7 @@ export function Moves() {
         cell: (info) => (
           <td className="tType">
             <Link
-              href={{
-                pathname: `/type/[name]`,
-                query: { name: info.getValue<string>() },
-              }}
+              href={`/types/${info.getValue()}`}
             >
               <Image
                 src={`/images/types/${info.getValue<string>()}.png`}

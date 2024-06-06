@@ -42,10 +42,7 @@ export function Stats({ stats }: Props) {
                 {info.getValue<IMoveStatAffect[]>().map((i) => (
                   <Link
                     key={i.move.name}
-                    href={{
-                      pathname: `/move/[name]`,
-                      query: { name: i.move.name },
-                    }}
+                    href={`/moves/${i.move.name}`}
                   >
                     <p>
                       {removeDash(i.move.name)} +{i.change}
@@ -63,10 +60,7 @@ export function Stats({ stats }: Props) {
                 {info.getValue<IMoveStatAffect[]>().map((i) => (
                   <Link
                     key={i.move.name}
-                    href={{
-                      pathname: `/move/[name]`,
-                      query: { name: i.move.name },
-                    }}
+                    href={`/moves/${i.move.name}`}
                   >
                     <p>
                       {removeDash(i.move.name)} {i.change}

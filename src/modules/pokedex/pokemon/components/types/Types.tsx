@@ -18,10 +18,7 @@ export function Types({ types }: Props) {
         {types.map((t) => (
           <div className="type" id={t.name} key={t.name}>
             <Link
-              href={{
-                pathname: `/type/[name]`,
-                query: { name: t.name },
-              }}
+              href={`/types/${t.name}`}
             >
               <Image
                 src={`/images/types/${t.name}.png`}

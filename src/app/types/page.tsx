@@ -1,3 +1,5 @@
+"use client"
+
 import { useQuery, type UseQueryResult } from '@tanstack/react-query';
 
 import { errorToast, Loader } from '@/components';

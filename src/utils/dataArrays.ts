@@ -151,7 +151,7 @@ export const pokemonFilters: PokemonFilters = [
     version: `scarlet-violet`,
     format: `gen9`,
     min: 904,
-    max: 1011,
+    max: 1018,
   },
 ];
 
@@ -365,7 +365,7 @@ export const genNav: IGenNav[] = [
   {
     value: `gen9`,
     label: `Gen IX`,
-    limit: 1011,
+    limit: 1018,
     options: [
       {
         label: `scarlet`,

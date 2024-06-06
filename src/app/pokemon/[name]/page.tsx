@@ -1,9 +1,10 @@
+"use client"
+
 import { useEffect, useRef, useState } from 'react';
 
 import { FaChevronLeft } from '@meronex/icons/fa';
 import { HiOutlineSpeakerphone } from '@meronex/icons/hi';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 import { Button, Loader, Separator, errorToast } from '@/components';
 import {
@@ -26,14 +27,15 @@ import {
 import styles from '@/modules/pokedex/pokemon/Pokemon.module.scss';
 import { IFlavorText } from '@/types';
 import { pokemonFilters, removeDash, removeLongName } from '@/utils';
+import { useParams } from 'next/navigation';
 
 function PokemonCard() {
   const [game, setGame] = useState<string>(``);
   const [version, setVersion] = useState<string>(``);
   const [format, setFormat] = useState<string>(``);
 
-  const router = useRouter();
-  const name = router.query.name as string;
+  const params = useParams();
+  const name = params.name as string;
 
   const { pokemonId, pokemon, species, types, location, evolution, cards } =
     useFetchPokemon(name);

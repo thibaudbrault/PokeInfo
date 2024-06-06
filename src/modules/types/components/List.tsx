@@ -16,7 +16,7 @@ export function List({ types }: Props) {
         <li key={t.name}>
           <div className={`${styles.type} type`} id={t.name}>
             <Link
-              href={{ pathname: `/type/[name]`, query: { name: t?.name } }}
+              href={`/types/${t?.name}`}
               key={t.name}
             >
               <Image

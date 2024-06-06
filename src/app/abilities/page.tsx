@@ -1,3 +1,5 @@
+"use client"
+
 import { useMemo, useState } from 'react';
 
 import { useQuery, type UseQueryResult } from '@tanstack/react-query';
@@ -41,10 +43,7 @@ function AbilitiesPage() {
           <td className="tBold">
             <Link
               className="tLink"
-              href={{
-                pathname: `/ability/[name]`,
-                query: { name: info.getValue<string>() },
-              }}
+              href={`/abilities/${info.getValue()}`}
             >
               {removeDash(info.getValue<string>())}
             </Link>

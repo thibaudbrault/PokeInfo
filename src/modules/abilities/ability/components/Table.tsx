@@ -46,10 +46,7 @@ export function Table({ ability, pokemon }: Props) {
           <td className="tBold">
             <Link
               className="tLink"
-              href={{
-                pathname: `/pokemon/[name]`,
-                query: { name: info.getValue<string>() },
-              }}
+              href={`/pokemon/${info.getValue()}`}
             >
               {removeDash(info.getValue<string>())}
             </Link>
@@ -67,10 +64,7 @@ export function Table({ ability, pokemon }: Props) {
         cell: (info) => (
           <td>
             <Link
-              href={{
-                pathname: `/ability/[name]`,
-                query: { name: info.getValue<string>() },
-              }}
+              href={`/abilities/${info.getValue()}`}
               className={
                 info.getValue<string>() === ability?.name
                   ? `tLink bold`
@@ -94,10 +88,7 @@ export function Table({ ability, pokemon }: Props) {
         cell: (info) => (
           <td>
             <Link
-              href={{
-                pathname: `/ability/[name]`,
-                query: { name: info.getValue<string>() },
-              }}
+              href={`/abilities/${info.getValue()}`}
               className={
                 info.getValue<string>() === ability?.name
                   ? `tLink bold`
@@ -117,10 +108,7 @@ export function Table({ ability, pokemon }: Props) {
         cell: (info) => (
           <td>
             <Link
-              href={{
-                pathname: `/ability/[name]`,
-                query: { name: info.getValue<string>() },
-              }}
+              href={`/abilities/${info.getValue()}`}
               className={
                 info.getValue<string>() === ability?.name
                   ? `tLink bold`

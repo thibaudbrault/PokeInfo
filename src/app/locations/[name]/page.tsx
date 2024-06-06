@@ -1,6 +1,7 @@
+"use client"
+
 import { FaChevronLeft } from '@meronex/icons/fa';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 import { Button, errorToast, GenNav, Loader } from '@/components';
 import { Area, Heading, useSwitchGame } from '@/modules/locations/location';
@@ -8,10 +9,11 @@ import styles from '@/modules/locations/Locations.module.scss';
 import { removeDash } from '@/utils';
 
 import type { ILocationArea } from '@/types';
+import { useParams } from 'next/navigation';
 
 function LocationCard() {
-  const router = useRouter();
-  const name = router.query.name as string;
+  const params = useParams();
+  const name = params.name as string;
 
   const {
     game,

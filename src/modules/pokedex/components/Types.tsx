@@ -12,10 +12,7 @@ export function Types({ p }: Props) {
       {p.types?.map((pt) => (
         <div key={pt.type.name} className="type" id={pt.type.name}>
           <Link
-            href={{
-              pathname: `/type/[name]`,
-              query: { name: pt.type.name },
-            }}
+            href={`/types/${pt.type.name}`}
           >
             <span>{pt.type.name}</span>
           </Link>

@@ -50,10 +50,7 @@ export function Search({ moves }: Props) {
                     fallbackSrc={`/images/other/unknown.png`}
                   />
                   <Link
-                    href={{
-                      pathname: `/move/[name]`,
-                      query: { name: res.item.name },
-                    }}
+                    href={`/moves/${res.item.name}`}
                     className="searchLink bold"
                   >
                     {capitalize(removeDash(res.item.name))}

@@ -59,10 +59,7 @@ export function Content({ pokemon, moveName, version, toggle }: Props) {
                       />
                       <Link
                         className={styles.link}
-                        href={{
-                          pathname: `/pokemon/[name]`,
-                          query: { name: p.name },
-                        }}
+                        href={`/pokemon/${p.name}`}
                         key={p.name}
                       >
                         {removeLongName(removeDash(p.name))}

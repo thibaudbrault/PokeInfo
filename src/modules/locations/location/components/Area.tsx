@@ -67,10 +67,7 @@ export function Area({ area, encounter, method, game }: Props) {
           <td className="tBold">
             <Link
               className="tLink"
-              href={{
-                pathname: `/pokemon/[name]`,
-                query: { name: info.getValue<string>() },
-              }}
+              href={`/pokemon/${info.getValue()}`}
             >
               {removeDash(info.getValue<string>())}
             </Link>

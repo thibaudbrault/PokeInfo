@@ -1,22 +1,24 @@
+"use client"
+
 import { FaChevronLeft } from '@meronex/icons/fa';
 import * as Tabs from '@radix-ui/react-tabs';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 import { Button, Loader, Separator, errorToast } from '@/components';
 import {
   Damage,
   Heading,
-  Pokemon,
   Moves,
+  Pokemon,
   useTypeQuery,
 } from '@/modules/types/type';
 import styles from '@/modules/types/type/Type.module.scss';
+import { useParams } from 'next/navigation';
 
 function TypeCard() {
-  const router = useRouter();
-  const name = router.query.name as string;
+  const params = useParams();
+  const name = params.name as string;
 
   const { type, pokemon, moves, isLoading, isError, error } =
     useTypeQuery(name);

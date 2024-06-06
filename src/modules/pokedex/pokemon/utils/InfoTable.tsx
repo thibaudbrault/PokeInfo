@@ -131,10 +131,7 @@ export const InfoTable = [
         return pokemon?.held_items?.length > 0
           ? pokemon?.held_items?.map((ph) => (
               <Link
-                href={{
-                  pathname: `/item/[name]`,
-                  query: { name: ph.item.name },
-                }}
+                href={`/items/${ph.item.name}`}
                 key={ph.item.name}
               >
                 {removeDash(ph.item.name)}
@@ -160,10 +157,7 @@ export const InfoTable = [
               (sv) =>
                 sv.is_default === false && (
                   <Link
-                    href={{
-                      pathname: `/pokemon/[name]`,
-                      query: { name: sv.pokemon.name },
-                    }}
+                    href={`/pokemon/${sv.pokemon.name}`}
                     key={sv.pokemon.name}
                   >
                     {removeDash(sv.pokemon.name)}

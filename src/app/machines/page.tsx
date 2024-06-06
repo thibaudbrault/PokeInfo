@@ -1,3 +1,5 @@
+"use client"
+
 import { useMemo, useState } from 'react';
 
 import { useQuery, type UseQueryResult } from '@tanstack/react-query';
@@ -53,10 +55,7 @@ function MachinesPage() {
           <td>
             <Link
               className="tLink"
-              href={{
-                pathname: `/move/[name]`,
-                query: { name: info.getValue<string>() },
-              }}
+              href={`/moves/${info.getValue()}`}
             >
               {removeDash(info.getValue<string>())}
             </Link>

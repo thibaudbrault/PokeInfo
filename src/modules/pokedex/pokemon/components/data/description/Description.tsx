@@ -49,10 +49,7 @@ export function Description({ pokemon, species, game }: Props) {
           {pokemon?.types?.map((pt) => (
             <div className="type" id={pt.type.name} key={pt.type.name}>
               <Link
-                href={{
-                  pathname: `/type/[name]`,
-                  query: { name: pt.type.name },
-                }}
+                href={`/types/${pt.type.name}`}
               >
                 <Image
                   src={`/images/types/${pt.type.name}.png`}

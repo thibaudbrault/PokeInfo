@@ -50,10 +50,7 @@ export function Search({ items }: Props) {
                     fallbackSrc={`/images/other/unknown.png`}
                   />
                   <Link
-                    href={{
-                      pathname: `/item/[name]`,
-                      query: { name: res.item.name },
-                    }}
+                    href={`/items/${res.item.name}`}
                     className="searchLink bold"
                   >
                     {capitalize(removeDash(res.item.name))}

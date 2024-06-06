@@ -93,10 +93,7 @@ export function Moves({ pokemon, version, name }: Props) {
           <td className="tBold">
             <Link
               className="tLink"
-              href={{
-                pathname: `/move/[name]`,
-                query: { name: info.getValue<string>() },
-              }}
+              href={`/moves/${info.getValue()}`}
             >
               {removeDash(info.getValue<string>())}
             </Link>
@@ -110,10 +107,7 @@ export function Moves({ pokemon, version, name }: Props) {
         cell: (info) => (
           <td>
             <Link
-              href={{
-                pathname: `/type/[name]`,
-                query: { name: info.getValue<string>() },
-              }}
+              href={`/types/${info.getValue()}`}
             >
               <Image
                 src={`/images/types/${info.getValue<string>()}.png`}

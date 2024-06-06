@@ -43,10 +43,7 @@ export function Items() {
           <td className="tBold">
             <Link
               className="tLink"
-              href={{
-                pathname: `/item/[name]`,
-                query: { name: info.getValue<string>() },
-              }}
+              href={`/items/${info.getValue()}`}
             >
               {removeDash(info.getValue<string>()).replaceAll(`--`, `-`)}
             </Link>
