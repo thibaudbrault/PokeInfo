@@ -14,8 +14,6 @@
     "dev": "next dev -p 3005",
     "build": "next build",
     "start": "next start",
-    "test": "playwright test",
-    "test:headed": "playwright test --headed",
     "type": "tsc --noEmit",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
     "lint:fix": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --fix",
@@ -39,7 +37,7 @@
     "axios": "^1.6.2",
     "class-variance-authority": "0.7.0",
     "fuse.js": "7.0.0",
-    "next": "14.0.4",
+    "next": "14.2.3",
     "next-pwa": "5.6.0",
     "nextjs-progressbar": "0.0.16",
     "react": "18.2.0",
@@ -54,10 +52,9 @@
     "react-tooltip": "5.13.1",
     "react-virtual": "2.10.4",
     "uuid": "9.0.0",
-    "vaul": "0.8.0"
+    "vaul": "0.9.1"
   },
   "devDependencies": {
-    "@playwright/test": "1.31.2",
     "@tanstack/eslint-plugin-query": "4.29.4",
     "@types/node": "20.3.1",
     "@types/react": "18.2.48",
