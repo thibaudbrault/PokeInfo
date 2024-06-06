@@ -22,7 +22,7 @@ export function Heading({ name }: Props) {
       />
       <meta
         property="og:url"
-        content={`https://pokeref.app/location/${name}`}
+        content={`https://pokeref.app/locations/${name}`}
       />
       <meta property="og:type" content="website" />
     </Head>

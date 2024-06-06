@@ -40,10 +40,7 @@ export function Base({ pokemon, species }: Props) {
                 <li key={pa.ability.name}>
                   <Link
                     className="tLink"
-                    href={{
-                      pathname: `/ability/[name]`,
-                      query: { name: pa.ability.name },
-                    }}
+                    href={`/abilities/${pa.ability.name}`}
                     key={pa.ability.name}
                   >
                     {removeDash(pa.ability.name)}

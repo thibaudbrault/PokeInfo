@@ -16,10 +16,7 @@ export function Held({ item }: Props) {
           <span>Held by :</span>
           {item?.held_by_pokemon?.map((ih: IItemHolderPokemon) => (
             <Link
-              href={{
-                pathname: `/pokemon/[name]`,
-                query: { name: ih.pokemon.name },
-              }}
+              href={`/pokemon/${ih.pokemon.name}`}
               key={ih.pokemon.name}
             >
               {removeDash(ih.pokemon.name)}

@@ -2,10 +2,11 @@ import { GetServerSideProps } from 'next';
 
 import { IAbility, IItem, ILocation, IMove, IPokemon, IType } from '@/types';
 import { BASE_URL, Limit, sanitizeForXML } from '@/utils';
+import { NextResponse } from 'next/server';
 
 const URL = `https://pokeref.app`;
 
-async function generateSiteMap() {
+export async function GET() {
   const pokedexRes = await fetch(`${BASE_URL}/pokemon?limit=${Limit.POKEMON}`);
   const pokedex: IPokemon[] = await pokedexRes
     .json()
@@ -80,7 +81,7 @@ async function generateSiteMap() {
       const sanitizedName = sanitizeForXML(move.name);
       return `
             <url>
-                <loc>${URL}/move/${sanitizedName}</loc>
+                <loc>${URL}/moves/${sanitizedName}</loc>
                 <changefreq>weekly</changefreq>
                 <priority>0.7</priority>
             </url>
@@ -90,7 +91,7 @@ async function generateSiteMap() {
       const sanitizedName = sanitizeForXML(ability.name);
       return `
             <url>
-                <loc>${URL}/ability/${sanitizedName}</loc>
+                <loc>${URL}/abilities/${sanitizedName}</loc>
                 <changefreq>weekly</changefreq>
                 <priority>0.7</priority>
             </url>
@@ -100,7 +101,7 @@ async function generateSiteMap() {
       const sanitizedName = sanitizeForXML(type.name);
       return `
             <url>
-                <loc>${URL}/type/${sanitizedName}</loc>
+                <loc>${URL}/types/${sanitizedName}</loc>
                 <changefreq>weekly</changefreq>
                 <priority>0.7</priority>
             </url>
@@ -110,7 +111,7 @@ async function generateSiteMap() {
       const sanitizedName = sanitizeForXML(item.name);
       return `
             <url>
-                <loc>${URL}/item/${sanitizedName}</loc>
+                <loc>${URL}/items/${sanitizedName}</loc>
                 <changefreq>weekly</changefreq>
                 <priority>0.7</priority>
             </url>
@@ -120,7 +121,7 @@ async function generateSiteMap() {
       const sanitizedName = sanitizeForXML(location.name);
       return `
             <url>
-                <loc>${URL}/location/${sanitizedName}</loc>
+                <loc>${URL}/locations/${sanitizedName}</loc>
                 <changefreq>weekly</changefreq>
                 <priority>0.7</priority>
             </url>
@@ -128,23 +129,9 @@ async function generateSiteMap() {
     })}
   </urlset>
  `;
-  return sitemap;
+  return new NextResponse(sitemap, {
+    headers: {
+      'Content-Type': 'application/xml'
+    }
+  })
 }
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { res } = context;
-
-  // Generate the XML sitemap with the blog data
-  const sitemap = await generateSiteMap();
-
-  res.setHeader(`Content-Type`, `text/xml`);
-  // Send the XML to the browser
-  res.write(sitemap);
-  res.end();
-
-  return {
-    props: {},
-  };
-};
-
-export default function SiteMap() {}

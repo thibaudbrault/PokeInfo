@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from 'react';
 
 import { useQuery, type UseQueryResult } from '@tanstack/react-query';
@@ -18,6 +20,7 @@ import {
 } from '@/utils';
 
 import type { IPokemon } from '@/types';
+import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 
 function Pokedex() {
   const [filteredPokedex, setFilteredPokedex] = useState<IPokemon[]>([]);
@@ -31,6 +34,7 @@ function Pokedex() {
   const [page, setPage] = useState<number>(0);
 
   const { scrollBtn } = useScrollDir();
+
 
   const {
     isLoading,
@@ -53,7 +57,7 @@ function Pokedex() {
   const handlePageChange = (data: { selected: number }) => {
     window.scrollTo(0, 0);
     setPage(data.selected);
-    setOffset((50 * data.selected) % Limit.POKEMON);
+    setOffset((50 * page) % Limit.POKEMON);
   };
 
   if (isError && error instanceof Error) {
@@ -101,6 +105,7 @@ function Pokedex() {
             className="pagination"
             breakLabel="..."
             onPageChange={handlePageChange}
+            disableInitialCallback={true}
             nextLabel=">"
             pageRangeDisplayed={3}
             marginPagesDisplayed={2}

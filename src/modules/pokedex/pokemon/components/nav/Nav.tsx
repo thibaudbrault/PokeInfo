@@ -448,7 +448,7 @@ export function Nav({
             </NavigationMenu.Content>
           </NavigationMenu.Item>
         )}
-        {(pokemonId < 1011 || pokemonId > 10000) && (
+        {(pokemonId < 1018 || pokemonId > 10000) && (
           <NavigationMenu.Item>
             <NavigationMenu.Trigger className="NavigationMenuTrigger">
               Gen IX

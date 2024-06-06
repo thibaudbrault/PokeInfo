@@ -58,10 +58,7 @@ export function Table({ types }: Props) {
                     key={type}
                     data-tooltip-id="type-tooltip"
                     data-tooltip-content={capitalize(type)}
-                    href={{
-                      pathname: `/type/[name]`,
-                      query: { name: type },
-                    }}
+                    href={`/types/${type}`}
                   >
                     <Image
                       src={`/images/types/${type}.png`}
@@ -84,10 +81,7 @@ export function Table({ types }: Props) {
                       key={type}
                       data-tooltip-id="type-tooltip"
                       data-tooltip-content={capitalize(type)}
-                      href={{
-                        pathname: `/type/[name]`,
-                        query: { name: type },
-                      }}
+                      href={`/types/${type}`}
                     >
                       <Image
                         src={`/images/types/${type}.png`}
@@ -110,10 +104,7 @@ export function Table({ types }: Props) {
                     key={type}
                     data-tooltip-id="type-tooltip"
                     data-tooltip-content={capitalize(type)}
-                    href={{
-                      pathname: `/type/[name]`,
-                      query: { name: type },
-                    }}
+                    href={`/types/${type}`}
                   >
                     <Image
                       src={`/images/types/${type}.png`}
@@ -135,10 +126,7 @@ export function Table({ types }: Props) {
                     key={type}
                     data-tooltip-id="type-tooltip"
                     data-tooltip-content={capitalize(type)}
-                    href={{
-                      pathname: `/type/[name]`,
-                      query: { name: type },
-                    }}
+                    href={`/types/${type}`}
                   >
                     <Image
                       src={`/images/types/${type}.png`}
@@ -160,10 +148,7 @@ export function Table({ types }: Props) {
                     key={type}
                     data-tooltip-id="type-tooltip"
                     data-tooltip-content={capitalize(type)}
-                    href={{
-                      pathname: `/type/[name]`,
-                      query: { name: type },
-                    }}
+                    href={`/types/${type}`}
                   >
                     <Image
                       src={`/images/types/${type}.png`}
@@ -186,10 +171,7 @@ export function Table({ types }: Props) {
                       key={type}
                       data-tooltip-id="type-tooltip"
                       data-tooltip-content={capitalize(type)}
-                      href={{
-                        pathname: `/type/[name]`,
-                        query: { name: type },
-                      }}
+                      href={`/types/${type}`}
                     >
                       <Image
                         src={`/images/types/${type}.png`}

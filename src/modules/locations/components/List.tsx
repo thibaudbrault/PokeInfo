@@ -23,10 +23,7 @@ export function List({ location, locations }: Props) {
                   ?.map((ll) => (
                     <li key={ll.name}>
                       <Link
-                        href={{
-                          pathname: `/location/[name]`,
-                          query: { name: ll.name },
-                        }}
+                        href={`/locations/${ll.name}`}
                         key={ll.name}
                       >
                         {removeDash(ll.name).replace(

@@ -90,10 +90,7 @@ export function Forms({ pokemon }: Props) {
           <td className="tType">
             <div className="type" id={info.getValue<string>()}>
               <Link
-                href={{
-                  pathname: `/type/[name]`,
-                  query: { name: info.getValue<string>() },
-                }}
+                href={`/types/${info.getValue()}`}
               >
                 <Image
                   src={`/images/types/${info.getValue()}.png` || ``}
@@ -119,10 +116,7 @@ export function Forms({ pokemon }: Props) {
           <td className="tType">
             <div className="type" id={info.getValue<string>()}>
               <Link
-                href={{
-                  pathname: `/type/[name]`,
-                  query: { name: info.getValue<string>() },
-                }}
+                href={`/types/${info.getValue()}`}
               >
                 <Image
                   src={`/images/types/${info.getValue()}.png` || ``}

@@ -55,10 +55,7 @@ export function Evolution({ evolution, name }: Props) {
                   ),
               )}
               <Link
-                href={{
-                  pathname: `/pokemon/[name]`,
-                  query: { name: evolution?.chain?.species?.name },
-                }}
+                href={`/pokemon/${evolution?.chain?.species?.name}`}
               >
                 {removeDash(evolution?.chain?.species?.name)}
               </Link>
@@ -277,10 +274,7 @@ export function Evolution({ evolution, name }: Props) {
                         ),
                     )}
                     <Link
-                      href={{
-                        pathname: `/pokemon/[name]`,
-                        query: { name: ee.species.name },
-                      }}
+                      href={`/pokemon/${ee.species.name}`}
                     >
                       {removeDash(ee.species.name)}
                     </Link>
@@ -538,10 +532,7 @@ export function Evolution({ evolution, name }: Props) {
                                 ),
                             )}
                             <Link
-                              href={{
-                                pathname: `/pokemon/[name]`,
-                                query: { name: eee.species.name },
-                              }}
+                              href={`/pokemon/${eee.species.name}`}
                             >
                               {removeDash(eee.species.name)}
                             </Link>

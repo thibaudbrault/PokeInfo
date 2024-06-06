@@ -58,10 +58,7 @@ export function Search({ onGrid }: Props) {
             {searchRes?.map((res) => (
               <li key={res.item.name}>
                 <Link
-                  href={{
-                    pathname: `/pokemon/[name]`,
-                    query: { name: res.item.name },
-                  }}
+                  href={`/pokemon/${res.item.name}`}
                   className="searchLink"
                 >
                   <ImageWithFallback

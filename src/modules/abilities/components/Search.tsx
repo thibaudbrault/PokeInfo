@@ -43,10 +43,7 @@ export function Search({ abilities }: Props) {
               searchRes?.map((res) => (
                 <li key={res.item.name}>
                   <Link
-                    href={{
-                      pathname: `/ability/[name]`,
-                      query: { name: res.item.name },
-                    }}
+                    href={`/abilities/${res.item.name}`}
                     className="searchLink bold"
                   >
                     {capitalize(removeDash(res.item.name))}

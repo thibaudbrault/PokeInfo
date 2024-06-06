@@ -39,10 +39,7 @@ export function Status({ status }: Props) {
               {info.getValue<IMove[]>().map((i) => (
                 <Link
                   key={i.id}
-                  href={{
-                    pathname: `/move/[name]`,
-                    query: { name: i.name },
-                  }}
+                  href={`/moves/${i.name}`}
                 >
                   {removeDash(i.name)}
                 </Link>

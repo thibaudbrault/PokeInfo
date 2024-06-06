@@ -23,7 +23,7 @@ export function List({ filteredPokedex }: Props) {
             data-test-id="pokemonElement"
           >
             <Sprites p={p} />
-            {p.id < 1011 && (
+            {p.id < 1018 && (
               <p className={styles.number}>
                 {p.id.toString().padStart(3, `0`)}
               </p>

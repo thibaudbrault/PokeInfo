@@ -1,6 +1,7 @@
+"use client"
+
 import { FaChevronLeft } from '@meronex/icons/fa';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 import { Button, Loader, Separator, errorToast } from '@/components';
 import {
@@ -11,12 +12,13 @@ import {
 } from '@/modules/abilities/ability';
 import styles from '@/modules/abilities/ability/Ability.module.scss';
 import { removeDash } from '@/utils';
+import { useParams } from 'next/navigation';
 
 function Ability() {
   const overworld = `Overworld`;
 
-  const router = useRouter();
-  const name = router.query.name as string;
+  const params = useParams();
+  const name = params.name as string;
 
   const {
     isLoading,
